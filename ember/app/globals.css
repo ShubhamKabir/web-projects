@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --ember-ink: #171513;
+  --ember-cream: #f2ede4;
+  --ember-paper: #e8e0d4;
+  --ember-clay: #9b6046;
+  --ember-muted: #746b61;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ember-cream);
+  color: var(--ember-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--ember-ink);
+  color: var(--ember-cream);
+}
+
+.serif-display {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.mono {
+  font-family: "Courier New", Courier, monospace;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

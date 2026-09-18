@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --atlas-ivory: #f5f3ee;
+  --atlas-paper: #ebe8df;
+  --atlas-ink: #171714;
+  --atlas-muted: #77746b;
+  --atlas-border: #d8d5cc;
+  --atlas-olive: #6d7355;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--atlas-ivory);
+  color: var(--atlas-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--atlas-ink);
+  color: var(--atlas-ivory);
+}

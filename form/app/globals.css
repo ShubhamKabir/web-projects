@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --form-cream: #f4f1eb;
+  --form-black: #11110f;
+  --form-orange: #ff4d24;
+  --form-muted: #706d67;
+  --form-border: #d8d4cc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--form-cream);
+  color: var(--form-black);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--form-orange);
+  color: #11110f;
+}

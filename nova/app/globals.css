@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --nova-bg: #0b0a0f;
+  --nova-surface: #15131c;
+  --nova-surface-2: #1b1823;
+  --nova-purple: #8b5cf6;
+  --nova-lime: #c7f36b;
+  --nova-text: #f7f5fa;
+  --nova-muted: #a5a1ae;
+  --nova-border: #292531;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--nova-bg);
+  color: var(--nova-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--nova-lime);
+  color: #0b0a0f;
+}

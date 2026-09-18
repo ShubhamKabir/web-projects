@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f7f3;
+  --foreground: #171717;
+  --muted: #6f6e69;
+  --line: #deddd7;
+  --accent: #3149a6;
+  --accent-dark: #263a89;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #d9def5;
+  color: #171717;
+}
+
+.serif-display {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.045em;
+}
+
+.mono {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(23, 23, 23, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 23, 23, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.matrix-row {
+  animation: matrixReveal 5s ease-in-out infinite;
+}
+
+.matrix-row:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.matrix-row:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes matrixReveal {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .matrix-row {
+    animation: none;
+  }
+}

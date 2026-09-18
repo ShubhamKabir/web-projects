@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --hadal-void: #010307;
+  --hadal-abyss: #020a12;
+  --hadal-navy: #061827;
+  --hadal-ocean: #0b3448;
+  --hadal-cyan: #0ea5b7;
+  --hadal-bio: #38e8d0;
+  --hadal-white: #e6eef2;
+  --hadal-muted: #71838c;
+  --hadal-amber: #f4a62a;
+  --hadal-danger: #e85d5d;
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--hadal-void);
+}
+
+body {
+  margin: 0;
+  background: var(--hadal-void);
+  color: var(--hadal-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--hadal-cyan);
+  color: var(--hadal-void);
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -100%) rotate(360deg);
+  }
+}
