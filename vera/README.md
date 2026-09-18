@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VERA — AI SaaS
 
-## Getting Started
+VERA is a conceptual AI SaaS product experience designed around intelligent workflow automation.
 
-First, run the development server:
+The project combines a warm editorial visual language with a darker technical product interface to present an AI-powered workflow platform.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+VERA explores how an AI SaaS product can be presented without relying on a typical generic dashboard aesthetic.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The interface uses:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Editorial typography
+- Warm neutral backgrounds
+- Dark product surfaces
+- Blue interface accents
+- Technical monospace details
+- Structured product sections
+- Responsive layouts
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- AI SaaS landing page
+- Product-focused hero section
+- Workflow/product presentation
+- Feature sections
+- Product interface previews
+- Responsive navigation
+- Responsive layouts
+- Editorial content sections
+- Clear calls to action
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design Direction
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The visual system intentionally combines two sides of the product.
 
-## Deploy on Vercel
+### Editorial
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Warm cream backgrounds
+- Serif typography
+- Spacious layouts
+- Magazine-inspired composition
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Technical
+
+- Dark interface surfaces
+- Monospace details
+- Blue accents
+- Structured UI elements
+- Product-oriented layouts
+
+This creates a visual identity that feels different from a conventional SaaS template.
+
+## Technology
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+    vera/
+    ├── app/
+    ├── components/
+    ├── public/
+    ├── package.json
+    ├── next.config.ts
+    ├── tsconfig.json
+    └── README.md
+
+## Local Development
+
+From the project directory:
+
+    npm install
+
+Start the development server:
+
+    npm run dev
+
+Then open:
+
+    http://localhost:3000
+
+## Deployment
+
+The project is deployed through Vercel and uses the `vera` folder as its root directory within the `web-projects` repository.
+
+Updates pushed to the repository can trigger a new Vercel deployment.
+
+## Purpose
+
+VERA was built as part of a collection of independent web projects exploring different industries, visual systems, and interaction patterns.
+
+The project focuses specifically on AI SaaS product presentation and editorial-tech art direction.
