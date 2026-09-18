@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FORM — Agency
 
-## Getting Started
+FORM is a creative agency web experience focused on art direction, typography, visual identity, and editorial-style presentation.
 
-First, run the development server:
+The project uses an expressive layout system designed to feel like a contemporary creative studio rather than a conventional agency website.
+
+## Overview
+
+FORM explores how a creative agency can present its work and capabilities through strong typography, structured compositions, and unconventional layouts.
+
+The interface uses:
+
+- Oversized typography
+- Editorial layouts
+- Asymmetrical grids
+- Strong visual hierarchy
+- Thin borders and structured divisions
+- High-contrast compositions
+- Large project presentation areas
+- Minimal decorative elements
+
+## Features
+
+- Agency landing page
+- Studio introduction
+- Creative capabilities
+- Selected work presentation
+- Project-focused sections
+- Large typography-led layouts
+- Service and capability sections
+- Contact call to action
+- Responsive navigation
+- Responsive layouts
+
+## Design Direction
+
+The visual identity is intentionally bold, minimal, and editorial.
+
+### Visual System
+
+- Warm cream backgrounds
+- Black typography and surfaces
+- Orange-red accent color
+- Strong contrast
+- Thin structural borders
+- Oversized typography
+- Generous negative space
+
+### Layout
+
+- Asymmetrical compositions
+- Editorial grid systems
+- Oversized section numbers
+- Large visual blocks
+- Unexpected content positioning
+- Clear structural divisions
+
+The design avoids the typical polished corporate agency template and instead treats the website as an extension of the studio's creative direction.
+
+## Technology
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+```text
+form/
+├── app/
+├── components/
+├── public/
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+## Local Development
+
+From the project directory:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The project is deployed through Vercel and uses the `form` folder as its Root Directory within the `web-projects` repository.
 
-To learn more about Next.js, take a look at the following resources:
+Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Purpose
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+FORM was built as part of a collection of independent web projects exploring different industries, visual systems, and interaction patterns.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project focuses specifically on creative agency presentation, art direction, typography, editorial composition, and experimental layout design.
