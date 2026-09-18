@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PROJECT HADAL — Deep-Sea Research Archive
 
-## Getting Started
+PROJECT HADAL is an immersive deep-sea research archive experience built around cinematic exploration, scientific discovery, and underwater telemetry.
 
-First, run the development server:
+The project combines a persistent WebGL environment with interface-driven storytelling to create the feeling of descending into the deepest parts of the ocean.
+
+## Overview
+
+PROJECT HADAL presents a fictional deep-sea expedition through a continuous descent from the ocean surface into the hadal zone.
+
+The experience combines:
+
+- Cinematic underwater environments
+- Scientific telemetry
+- Sonar visualization
+- Specimen discovery
+- Research archive interfaces
+- Expedition data
+- Interactive specimen inspection
+- Scroll-driven progression
+- WebGL visuals
+- Atmospheric transitions
+
+## Experience
+
+The experience progresses through a structured descent:
+
+```text
+ENTRY
+  ↓
+SURFACE
+  ↓
+DESCENT
+  ↓
+TWILIGHT
+  ↓
+DISCOVERY
+  ↓
+SPECIMEN INSPECTION
+  ↓
+MIDNIGHT
+  ↓
+SONAR
+  ↓
+HYDROTHERMAL VENT
+  ↓
+SPECIMEN LAB
+  ↓
+ABYSS
+  ↓
+HADAL DESCENT
+  ↓
+10,924 M
+  ↓
+FINAL DISCOVERY
+  ↓
+ARCHIVE
+  ↓
+RETURN TO SURFACE
+```
+
+## Features
+
+- Immersive deep-sea environment
+- Persistent WebGL canvas
+- Scroll-driven expedition progression
+- Scientific telemetry HUD
+- Sonar sequence
+- Hydrothermal vent sequence
+- Specimen discovery and inspection
+- Specimen laboratory interface
+- Hadal-zone descent
+- Deep-ocean research archive
+- Cinematic transitions
+- Responsive interface
+
+## Design Direction
+
+The visual system is inspired by scientific research equipment, deep-ocean exploration, and archival documentation.
+
+### Visual System
+
+- Near-black backgrounds
+- Deep navy and ocean tones
+- Cyan interface accents
+- Amber telemetry indicators
+- Green and violet specimen indicators
+- Technical HUD elements
+- Fine borders and data markers
+- Atmospheric underwater environments
+
+### Typography
+
+The interface combines different type styles for different purposes:
+
+- Syne for major display typography
+- JetBrains Mono for telemetry and technical information
+- Newsreader for archival and field-note content
+
+The contrast between cinematic environments and precise scientific UI creates the project's core visual language.
+
+## Technology
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Three.js
+- React Three Fiber
+- Drei
+- GSAP
+- Lenis
+- Lucide React
+
+## Project Structure
+
+```text
+project-hadal/
+├── app/
+├── components/
+├── public/
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+## Local Development
+
+From the project directory:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The project is deployed through Vercel and uses the `project-hadal` folder as its Root Directory within the `web-projects` repository.
 
-To learn more about Next.js, take a look at the following resources:
+Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Purpose
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+PROJECT HADAL was built as part of a collection of independent web projects exploring different industries, visual systems, and interaction patterns.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project focuses specifically on immersive WebGL experiences, scientific storytelling, environmental interaction, cinematic scrolling, and experimental research interfaces.
