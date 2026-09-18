@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NOVA — Startup
 
-## Getting Started
+NOVA is a modern startup/product web experience designed around bold visual communication, interactive product presentation, and a high-energy digital identity.
 
-First, run the development server:
+The project explores a more expressive approach to startup websites while maintaining a clear product-focused structure.
+
+## Overview
+
+NOVA presents a fictional technology product through a combination of bold typography, vibrant accents, rounded interface elements, and interactive product previews.
+
+The interface uses:
+
+- Bold typography
+- Dark visual surfaces
+- Purple and lime accents
+- Rounded UI elements
+- Gradient-based visual effects
+- Interactive product previews
+- Strong visual hierarchy
+- Modern product-focused layouts
+
+## Features
+
+- Startup landing page
+- Product-focused hero section
+- Product introduction
+- Interactive product previews
+- Feature sections
+- Product interface presentation
+- Visual statistics and information blocks
+- Call-to-action sections
+- Responsive navigation
+- Responsive layouts
+
+## Design Direction
+
+The visual identity focuses on creating a bold and energetic technology brand.
+
+### Visual System
+
+- Deep near-black backgrounds
+- Purple primary accents
+- Lime highlights
+- Off-white typography
+- Rounded interface components
+- High-contrast visual elements
+
+### Product Presentation
+
+- Interactive-looking UI previews
+- Layered interface compositions
+- Bold section transitions
+- Large typography
+- Structured product information
+
+The design intentionally moves away from a conventional corporate startup layout and uses a more expressive, contemporary product aesthetic.
+
+## Technology
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+```text
+nova/
+├── app/
+├── components/
+├── public/
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+## Local Development
+
+From the project directory:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The project is deployed through Vercel and uses the `nova` folder as its Root Directory within the `web-projects` repository.
 
-To learn more about Next.js, take a look at the following resources:
+Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Purpose
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+NOVA was built as part of a collection of independent web projects exploring different industries, visual systems, and interaction patterns.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project focuses specifically on startup/product presentation, expressive UI design, interactive previews, and modern technology branding.
