@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EMBER — Restaurant
 
-## Getting Started
+EMBER is a contemporary restaurant web experience designed around atmosphere, hospitality, and fire-led cuisine.
 
-First, run the development server:
+The project combines immersive food-focused presentation with editorial typography and a warm, refined visual system.
+
+## Overview
+
+EMBER explores how a restaurant website can communicate the feeling of a dining experience rather than functioning only as a menu and information page.
+
+The interface uses:
+
+- Full-bleed photography
+- Editorial typography
+- Warm neutral tones
+- Dark charcoal surfaces
+- Asymmetrical layouts
+- Spacious composition
+- Hospitality-focused content
+
+## Features
+
+- Restaurant landing page
+- Immersive hero section
+- Restaurant story and concept
+- Featured dishes
+- Menu presentation
+- Dining experience sections
+- Reservation call to action
+- Location and contact information
+- Responsive navigation
+- Responsive layouts
+
+## Design Direction
+
+The visual identity is built around the contrast between fire, food, and refined hospitality.
+
+### Atmosphere
+
+- Dark charcoal backgrounds
+- Warm cream tones
+- Earth-inspired accents
+- Large food and restaurant photography
+- Cinematic compositions
+
+### Editorial
+
+- Serif display typography
+- Strong visual hierarchy
+- Asymmetrical layouts
+- Generous spacing
+- Magazine-inspired presentation
+
+The result is designed to feel like a contemporary hospitality brand rather than a conventional restaurant template.
+
+## Technology
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+```text
+ember/
+├── app/
+├── components/
+├── public/
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+## Local Development
+
+From the project directory:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The project is deployed through Vercel and uses the `ember` folder as its Root Directory within the `web-projects` repository.
 
-To learn more about Next.js, take a look at the following resources:
+Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Purpose
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+EMBER was built as part of a collection of independent web projects exploring different industries, visual systems, and interaction patterns.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project focuses specifically on restaurant branding, hospitality, food presentation, and immersive editorial web design.
