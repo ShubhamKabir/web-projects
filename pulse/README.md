@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PULSE — Web App
 
-## Getting Started
+PULSE is a functional project-management web application designed around organizing projects, tasks, schedules, teams, and activity in a single workspace.
 
-First, run the development server:
+The project focuses on practical application UI, navigation, information architecture, and interactive front-end state rather than a marketing-style website.
+
+## Overview
+
+PULSE explores how a modern project-management application can structure complex information while keeping the interface clear and easy to navigate.
+
+The application includes:
+
+- Dashboard overview
+- Project management
+- Task management
+- Calendar
+- Team workspace
+- Activity feed
+- Settings
+- Authentication screens
+- Responsive application layouts
+- Local front-end state and data
+
+## Features
+
+- Login interface
+- Dashboard
+- Projects list
+- Project detail pages
+- Task management
+- Calendar interface
+- Team management
+- Activity timeline
+- Settings interface
+- Application sidebar navigation
+- Responsive layouts
+- Interactive UI states
+- Local data/state handling
+
+## Application Structure
+
+```text
+Login
+  ↓
+Dashboard
+  ├── Projects
+  │    └── Project Details
+  ├── Tasks
+  ├── Calendar
+  ├── Team
+  ├── Activity
+  └── Settings
+```
+
+The application is implemented as a front-end experience with local data and state. Authentication and backend services are not connected to a production database.
+
+## Design Direction
+
+The visual system is focused on clarity, structure, and usability.
+
+### Visual System
+
+- Neutral slate-based interface
+- Teal and blue accents
+- Clean typography
+- Structured cards
+- Subtle borders
+- Compact interface controls
+- Clear information hierarchy
+
+### Application UI
+
+- Persistent navigation
+- Dashboard-style information layout
+- Structured project and task views
+- Status indicators
+- Activity and scheduling interfaces
+- Responsive application shell
+
+The design prioritizes functional product UI over decorative or editorial presentation.
+
+## Pages
+
+```text
+/login
+/dashboard
+/projects
+/projects/[id]
+/tasks
+/calendar
+/team
+/activity
+/settings
+```
+
+## Technology
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Project Structure
+
+```text
+pulse/
+├── app/
+├── components/
+├── public/
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+## Local Development
+
+From the project directory:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The project is deployed through Vercel and uses the `pulse` folder as its Root Directory within the `web-projects` repository.
 
-To learn more about Next.js, take a look at the following resources:
+Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Purpose
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+PULSE was built as part of a collection of independent web projects exploring different industries, visual systems, and interaction patterns.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project focuses specifically on functional web application design, product UI, information architecture, dashboard experiences, and interactive front-end workflows.
