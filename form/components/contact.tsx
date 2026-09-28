@@ -1,4 +1,50 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoading(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      service: formData.get("service"),
+      projectDetails: formData.get("projectDetails"),
+      budget: formData.get("budget"),
+    };
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+
+      form.reset();
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <section id="contact" className="bg-[#11110f] text-white">
       <div className="mx-auto max-w-[1400px] px-5 py-24 md:px-8 md:py-32">
@@ -17,21 +63,95 @@ export default function Contact() {
             </h2>
           </div>
 
-          <div className="flex flex-col justify-end">
+          <div>
             <p className="max-w-lg text-xl leading-7 text-white/65 md:text-2xl md:leading-8">
               Tell us what you're building, where you're going, and what needs
               to change. We'll figure out the rest together.
             </p>
 
-            <a
-              href="mailto:hello@form.studio"
-              className="group mt-10 inline-flex w-fit items-center gap-4 border-b border-[#ff4d24] pb-3 text-sm font-bold uppercase tracking-[0.1em] transition-colors hover:text-[#ff4d24]"
-            >
-              hello@form.studio
-              <span className="text-[#ff4d24] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                ↗
-              </span>
-            </a>
+            <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+              <div className="grid gap-6 sm:grid-cols-2">
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  required
+                  className="w-full border-b border-white/20 bg-transparent px-0 py-4 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#ff4d24]"
+                />
+
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  required
+                  className="w-full border-b border-white/20 bg-transparent px-0 py-4 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#ff4d24]"
+                />
+              </div>
+
+              <input
+                name="company"
+                type="text"
+                placeholder="Company"
+                required
+                className="w-full border-b border-white/20 bg-transparent px-0 py-4 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#ff4d24]"
+              />
+
+              <select
+                name="service"
+                required
+                defaultValue=""
+                className="w-full border-b border-white/20 bg-[#11110f] px-0 py-4 text-sm text-white/65 outline-none focus:border-[#ff4d24]"
+              >
+                <option value="" disabled>
+                  Service needed
+                </option>
+                <option value="Branding">Branding</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Development">Development</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Other">Other</option>
+              </select>
+
+              <textarea
+                name="projectDetails"
+                placeholder="Tell us about your project"
+                required
+                rows={4}
+                className="w-full resize-none border-b border-white/20 bg-transparent px-0 py-4 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#ff4d24]"
+              />
+
+              <select
+                name="budget"
+                defaultValue=""
+                className="w-full border-b border-white/20 bg-[#11110f] px-0 py-4 text-sm text-white/65 outline-none focus:border-[#ff4d24]"
+              >
+                <option value="" disabled>
+                  Budget range
+                </option>
+                <option value="Under $1,000">Under $1,000</option>
+                <option value="$1,000–$3,000">$1,000–$3,000</option>
+                <option value="$3,000–$5,000">$3,000–$5,000</option>
+                <option value="$5,000+">$5,000+</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="group inline-flex items-center gap-4 border-b border-[#ff4d24] pb-3 text-sm font-bold uppercase tracking-[0.1em] transition-colors hover:text-[#ff4d24] disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {loading ? "Sending..." : "Start the conversation"}
+                <span className="text-[#ff4d24] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                  ↗
+                </span>
+              </button>
+
+              {submitted && (
+                <p className="text-sm text-[#ff4d24]">
+                  Thanks — we'll be in touch soon.
+                </p>
+              )}
+            </form>
 
             <div className="mt-16 grid grid-cols-2 gap-8 border-t border-white/10 pt-6">
               <div>
