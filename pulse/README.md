@@ -1,8 +1,8 @@
-# PULSE — Web App
+# PULSE — Web App + Client Onboarding Automation
 
-PULSE is a functional project-management web application designed around organizing projects, tasks, schedules, teams, and activity in a single workspace.
+PULSE is a functional project-management web application designed around organizing projects, tasks, schedules, teams, clients, and activity in a single workspace.
 
-The project focuses on practical application UI, navigation, information architecture, and interactive front-end state rather than a marketing-style website.
+The project now also demonstrates a real client onboarding workflow connecting the PULSE client intake interface with Make, Airtable, Notion, and Gmail.
 
 ## Overview
 
@@ -15,13 +15,74 @@ The application includes:
 - Task management
 - Calendar
 - Team workspace
+- Client intake
 - Activity feed
 - Settings
 - Authentication screens
 - Responsive application layouts
 - Local front-end state and data
+- Automated client onboarding workflow
+
+## Client Onboarding Automation
+
+The `/clients` page provides a client intake form for starting a new project.
+
+```text
+PULSE Client Intake
+        ↓
+Next.js API Route
+        ↓
+Make Custom Webhook
+        ↓
+Airtable — Clients
+        ↓
+Client Onboarding Automation
+        ↓
+6 Onboarding Tasks
+        ↓
+Notion Client Workspace
+        ↓
+Welcome Email via Gmail
+        ↓
+Airtable — Onboarding Status: In Progress
+```
+
+### Intake Data
+
+The client intake collects:
+
+- Client name
+- Email
+- Company
+- Service
+- Project start date
+- Project deadline
+- Notes
+
+The PULSE API validates the required fields and sends the intake data to Make through a server-side webhook environment variable.
+
+A generated Client ID is included with each submission.
+
+### Automated Onboarding
+
+The Make onboarding scenario watches the Airtable `Clients` table for newly created records.
+
+For each new client it creates six onboarding tasks:
+
+1. Send Welcome Email
+2. Collect Project Requirements
+3. Collect Brand / Project Assets
+4. Create Project Workspace
+5. Schedule Kickoff
+6. Confirm Project Timeline
+
+It then creates a client workspace/page in Notion, sends the welcome email through Gmail, and updates the Airtable client record to `In Progress`.
+
+The automation is configured to process new records from the point at which the production trigger is started, rather than reprocessing existing clients.
 
 ## Features
+
+### Project Management
 
 - Login interface
 - Dashboard
@@ -32,10 +93,16 @@ The application includes:
 - Team management
 - Activity timeline
 - Settings interface
-- Application sidebar navigation
-- Responsive layouts
-- Interactive UI states
-- Local data/state handling
+
+### Client Operations
+
+- Client intake form
+- Client onboarding workflow
+- Automated onboarding task creation
+- Notion workspace creation
+- Automated welcome email
+- Airtable client status tracking
+- Make workflow integration
 
 ## Application Structure
 
@@ -48,36 +115,13 @@ Dashboard
   ├── Tasks
   ├── Calendar
   ├── Team
+  ├── Clients
+  │    └── Client Intake → Automated Onboarding
   ├── Activity
   └── Settings
 ```
 
-The application is implemented as a front-end experience with local data and state. Authentication and backend services are not connected to a production database.
-
-## Design Direction
-
-The visual system is focused on clarity, structure, and usability.
-
-### Visual System
-
-- Neutral slate-based interface
-- Teal and blue accents
-- Clean typography
-- Structured cards
-- Subtle borders
-- Compact interface controls
-- Clear information hierarchy
-
-### Application UI
-
-- Persistent navigation
-- Dashboard-style information layout
-- Structured project and task views
-- Status indicators
-- Activity and scheduling interfaces
-- Responsive application shell
-
-The design prioritizes functional product UI over decorative or editorial presentation.
+The core PULSE application remains a front-end experience with local data and state. The client onboarding workflow is connected to external automation services through the Next.js API and Make.
 
 ## Pages
 
@@ -89,9 +133,34 @@ The design prioritizes functional product UI over decorative or editorial presen
 /tasks
 /calendar
 /team
+/clients
 /activity
 /settings
 ```
+
+## API
+
+```text
+POST /api/clients
+```
+
+The endpoint validates the client intake payload and forwards it to the Make client-intake webhook.
+
+The Make webhook URL is stored server-side using:
+
+```text
+MAKE_CLIENT_INTAKE_WEBHOOK_URL
+```
+
+The environment variable is not committed to the repository.
+
+## Automation Stack
+
+- Next.js API Route
+- Make
+- Airtable
+- Notion
+- Gmail
 
 ## Technology
 
@@ -105,11 +174,16 @@ The design prioritizes functional product UI over decorative or editorial presen
 ```text
 pulse/
 ├── app/
+│   ├── api/
+│   │   └── clients/
+│   └── clients/
 ├── components/
+│   ├── clients-page.tsx
+│   └── sidebar.tsx
+├── lib/
 ├── public/
 ├── package.json
 ├── next.config.ts
-├── tsconfig.json
 └── README.md
 ```
 
@@ -137,10 +211,33 @@ http://localhost:3000
 
 The project is deployed through Vercel and uses the `pulse` folder as its Root Directory within the `web-projects` repository.
 
+The current deployed PULSE application includes the client intake workflow.
+
 Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
 ## Purpose
 
-PULSE was built as part of a collection of independent web projects exploring different industries, visual systems, and interaction patterns.
+PULSE was originally built as a project-management application exploring product UI, information architecture, dashboard experiences, and interactive front-end workflows.
 
-The project focuses specifically on functional web application design, product UI, information architecture, dashboard experiences, and interactive front-end workflows.
+The project has now been extended with a practical business automation layer to demonstrate how a web application can connect to external CRM, project workspace, communication, and workflow automation tools.
+
+## Automation Status
+
+The client onboarding workflow has been tested end-to-end:
+
+```text
+PULSE submission
+      ✓
+Make webhook
+      ✓
+Airtable client record
+      ✓
+6 onboarding tasks
+      ✓
+Notion workspace
+      ✓
+Welcome email
+      ✓
+Airtable status update
+      ✓
+```
