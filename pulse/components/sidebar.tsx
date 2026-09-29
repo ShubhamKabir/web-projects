@@ -22,59 +22,24 @@ type SidebarProps = {
 };
 
 const navigation = [
-  {
-    label: "Overview",
-    href: "/dashboard",
-    icon: LayoutDashboard,
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-    icon: FolderKanban,
-  },
-  {
-    label: "Tasks",
-    href: "/tasks",
-    icon: CheckSquare,
-  },
-  {
-    label: "Clients",
-    href: "/clients",
-    icon: UserPlus,
-  },
-  {
-    label: "Calendar",
-    href: "/calendar",
-    icon: CalendarDays,
-  },
+  { label: "Overview", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Projects", href: "/projects", icon: FolderKanban },
+  { label: "Tasks", href: "/tasks", icon: CheckSquare },
+  { label: "Clients", href: "/clients", icon: UserPlus },
+  { label: "Calendar", href: "/calendar", icon: CalendarDays },
 ];
 
 const workspace = [
-  {
-    label: "Team",
-    href: "/team",
-    icon: Users,
-  },
-  {
-    label: "Activity",
-    href: "/activity",
-    icon: Activity,
-  },
-  {
-    label: "Analytics",
-    href: "/dashboard",
-    icon: BarChart3,
-  },
+  { label: "Team", href: "/team", icon: Users },
+  { label: "Activity", href: "/activity", icon: Activity },
+  { label: "Analytics", href: "/analytics", icon: BarChart3 },
 ];
 
 export default function Sidebar({ mobileOpen = false, onClose }: SidebarProps) {
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href === "/dashboard") {
-      return pathname === "/dashboard";
-    }
-
+    if (href === "/dashboard") return pathname === "/dashboard";
     return pathname.startsWith(href);
   };
 
@@ -96,18 +61,11 @@ export default function Sidebar({ mobileOpen = false, onClose }: SidebarProps) {
         ].join(" ")}
       >
         <div className="flex h-20 items-center justify-between border-b border-white/10 px-6">
-          <Link
-            href="/dashboard"
-            onClick={onClose}
-            className="flex items-center gap-3"
-          >
+          <Link href="/dashboard" onClick={onClose} className="flex items-center gap-3">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#247c78] text-sm font-bold">
               P
             </div>
-
-            <span className="text-[17px] font-semibold tracking-tight">
-              PULSE
-            </span>
+            <span className="text-[17px] font-semibold tracking-tight">PULSE</span>
           </Link>
 
           <button
