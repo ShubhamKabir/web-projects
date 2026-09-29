@@ -1,8 +1,8 @@
-# PULSE — Web App + Client Onboarding Automation
+# PULSE — Web App + Client Onboarding + Automated Reporting
 
 PULSE is a functional project-management web application designed around organizing projects, tasks, schedules, teams, clients, and activity in a single workspace.
 
-The project now also demonstrates a real client onboarding workflow connecting the PULSE client intake interface with Make, Airtable, Notion, and Gmail.
+The project also demonstrates real client operations automations connecting the PULSE client intake and analytics experiences with Make, Airtable, Notion, and Gmail.
 
 ## Overview
 
@@ -22,6 +22,7 @@ The application includes:
 - Responsive application layouts
 - Local front-end state and data
 - Automated client onboarding workflow
+- Automated weekly reporting workflow
 
 ## Client Onboarding Automation
 
@@ -80,6 +81,34 @@ It then creates a client workspace/page in Notion, sends the welcome email throu
 
 The automation is configured to process new records from the point at which the production trigger is started, rather than reprocessing existing clients.
 
+## Weekly Reporting Automation
+
+The `/analytics` page provides the reporting dashboard for PULSE operations. A scheduled Make scenario collects client and onboarding-task data from Airtable, calculates operational metrics, generates a weekly report, and delivers it to Gmail and Notion.
+
+```text
+Airtable — Clients
+        ↓
+Airtable — Onboarding Tasks
+        ↓
+Make — Scheduled Weekly Reporting
+        ↓
+Client + Task Metrics
+        ↓
+Weekly Operations Report
+        ├── Gmail — Email Delivery
+        └── Notion — Report Archive
+```
+
+The reporting workflow calculates:
+
+- Total clients
+- Total onboarding tasks
+- Completed tasks
+- Pending tasks
+- Overdue tasks
+
+The production scenario is scheduled for Monday at 9:00 AM Asia/Kolkata time.
+
 ## Features
 
 ### Project Management
@@ -103,6 +132,10 @@ The automation is configured to process new records from the point at which the 
 - Automated welcome email
 - Airtable client status tracking
 - Make workflow integration
+- Weekly operations reporting
+- Analytics and reporting dashboard
+- Automated Gmail report delivery
+- Automated Notion report archive
 
 ## Application Structure
 
@@ -118,6 +151,8 @@ Dashboard
   ├── Clients
   │    └── Client Intake → Automated Onboarding
   ├── Activity
+  ├── Analytics
+  │    └── Weekly Operations Reporting
   └── Settings
 ```
 
@@ -135,6 +170,7 @@ The core PULSE application remains a front-end experience with local data and st
 /team
 /clients
 /activity
+/analytics
 /settings
 ```
 
@@ -180,6 +216,9 @@ pulse/
 ├── components/
 │   ├── clients-page.tsx
 │   └── sidebar.tsx
+├── app/
+│   └── analytics/
+│       └── page.tsx
 ├── lib/
 ├── public/
 ├── package.json
@@ -211,7 +250,7 @@ http://localhost:3000
 
 The project is deployed through Vercel and uses the `pulse` folder as its Root Directory within the `web-projects` repository.
 
-The current deployed PULSE application includes the client intake workflow.
+The current deployed PULSE application includes the client intake and analytics experiences.
 
 Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
@@ -219,7 +258,7 @@ Updates pushed to the `master` branch can trigger a new Vercel deployment.
 
 PULSE was originally built as a project-management application exploring product UI, information architecture, dashboard experiences, and interactive front-end workflows.
 
-The project has now been extended with a practical business automation layer to demonstrate how a web application can connect to external CRM, project workspace, communication, and workflow automation tools.
+The project has now been extended with practical business automation layers to demonstrate how a web application can connect to external CRM, project workspace, communication, reporting, and workflow automation tools.
 
 ## Automation Status
 
@@ -239,5 +278,21 @@ Notion workspace
 Welcome email
       ✓
 Airtable status update
+      ✓
+
+The weekly reporting workflow has also been tested end-to-end:
+
+```text
+Airtable client data
+      ✓
+Airtable task data
+      ✓
+Weekly metric aggregation
+      ✓
+Weekly report generation
+      ✓
+Gmail delivery
+      ✓
+Notion report archive
       ✓
 ```
