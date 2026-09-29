@@ -13,6 +13,7 @@ import {
   Activity,
   LogOut,
   X,
+  UserPlus,
 } from "lucide-react";
 
 type SidebarProps = {
@@ -35,6 +36,11 @@ const navigation = [
     label: "Tasks",
     href: "/tasks",
     icon: CheckSquare,
+  },
+  {
+    label: "Clients",
+    href: "/clients",
+    icon: UserPlus,
   },
   {
     label: "Calendar",
