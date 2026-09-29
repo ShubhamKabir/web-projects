@@ -156,7 +156,7 @@ Dashboard
   └── Settings
 ```
 
-The core PULSE application remains a front-end experience with local data and state. The client onboarding workflow is connected to external automation services through the Next.js API and Make.
+The core PULSE application remains a front-end experience with local data and state. The client onboarding and reporting workflows are connected to external automation services through the Next.js API and Make.
 
 ## Pages
 
@@ -212,13 +212,12 @@ pulse/
 ├── app/
 │   ├── api/
 │   │   └── clients/
+│   ├── analytics/
+│   │   └── page.tsx
 │   └── clients/
 ├── components/
 │   ├── clients-page.tsx
 │   └── sidebar.tsx
-├── app/
-│   └── analytics/
-│       └── page.tsx
 ├── lib/
 ├── public/
 ├── package.json
@@ -279,6 +278,7 @@ Welcome email
       ✓
 Airtable status update
       ✓
+```
 
 The weekly reporting workflow has also been tested end-to-end:
 
